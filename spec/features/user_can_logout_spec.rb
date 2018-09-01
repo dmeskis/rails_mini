@@ -22,7 +22,6 @@ describe 'User can log out' do
 
       click_on "Log Out"
       expect(current_path).to eq('/')
-      expect(session[:user_id]).to eq(nil)
     end
   end
 end
