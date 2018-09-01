@@ -18,11 +18,11 @@ describe User, type: :model do
       expect(user.role).to eq("teacher")
       expect(user.teacher?).to be_truthy
     end
-    it "can be created as a parent" do
+    it "can be created as a guardian" do
       user = User.create(username: "parent",
                          password: "pass")
-      expect(user.role).to eq("parent")
-      expect(user.parent?).to be_truthy
+      expect(user.role).to eq("guardian")
+      expect(user.guardian?).to be_truthy
     end
   end
 end
