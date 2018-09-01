@@ -12,7 +12,6 @@ on the log in screen,
 if i am registered and enter the proper credentials,
 i am logged in and taken to my dashboard.
 
-As a student,
 when i click the student image on the landing page,
 i'm taken to a page where i choose myself by teacher
 name/image and by my name/image.
