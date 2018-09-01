@@ -1,0 +1,6 @@
+<h1>Welcome, <%= current_user.username %></h1>
+
+<% if current_user.teacher? %>
+<%= link_to "Add a Student", new_student_path %>
+
+<% end %>

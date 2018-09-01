@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   namespace :teacher do
     resources :students, only: [:index]
   end
+
+  get '/dashboard', to: 'dashboard#index'
 end

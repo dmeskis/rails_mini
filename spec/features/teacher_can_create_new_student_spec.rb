@@ -14,7 +14,7 @@ describe 'user can create new student' do
       fill_in "password", with: teacher.password
 
       click_on "Log In"
-      expect(current_path).to eq(teacher_dashboard_path)
+      expect(current_path).to eq(dashboard_path)
       click_on "Add a Student"
       expect(current_path).to eq(new_teacher_student_path)
 
