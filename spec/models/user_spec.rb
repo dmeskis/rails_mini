@@ -20,8 +20,7 @@ describe User, type: :model do
     end
     it "can be created as a parent" do
       user = User.create(username: "parent",
-                         password: "pass",
-                         role: 0)
+                         password: "pass")
       expect(user.role).to eq("parent")
       expect(user.parent?).to be_truthy
     end
