@@ -1,0 +1,3 @@
+class Form < ApplicationController
+
+end

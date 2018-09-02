@@ -8,11 +8,10 @@ describe 'a student can create form' do
 
       visit root_path
       click_on "Student"
+      save_and_open_page
 
-      click_on "#{teacher.first_name} #{teacher.last_name}"
-
-      click_on "#{student.first_name} #{student.last_name}"
-
+      fill_in "form[teacher]", with: "#{teacher.first_name} #{teacher.last_name}"
+      fill_in "form[student]", with: "#{student.first_name} #{student.last_name}"
       fill_in "form[mood]", with: "Happy"
       fill_in "form[worked_hard_at]", with: "Following rules"
       fill_in "form[done_better_at]", with: "Being a good friend"

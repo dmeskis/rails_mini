@@ -1,0 +1,18 @@
+<h1>New Form</h1>
+
+<%= form_for @form do |f| %>
+  <%= f.label :teacher %>
+  <%= f.collection_select :teacher, User.where(role: 1).order(:name), :id,
+  :name_with_initial, include_blank: true %>
+  <%= f.label :student %>
+  <%= f.collection_select :student, Student.order(:last_name), :id, :name_with_initial, include_blank: true %>
+  <%= f.label :mood %>
+  <%= f.text_field :mood %>
+  <%= f.label :worked_hard_at %>
+  <%= f.text_field :worked_hard_at %>
+  <%= f.label :done_better_at %>
+  <%= f.text_field :done_better_at %>
+  <%= f.label :favorite_part %>
+  <%= f.text_field :favorite_part %>
+  <%= f.submit %>
+<% end %>
