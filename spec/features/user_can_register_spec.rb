@@ -14,6 +14,8 @@ describe 'User can register' do
       fill_in :user_email, with: "user@mail.com"
       fill_in :user_username, with: username
       fill_in :user_password, with: "password"
+      fill_in :user_first_name, with: "Bob"
+      fill_in :user_last_name, with: "Saget"
 
       click_on "Create Account"
       expect(page).to have_content("Welcome, #{username}!")
