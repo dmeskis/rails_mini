@@ -4,8 +4,9 @@ class Teacher::StudentsController < Teacher::BaseController
   end
 
   def new
-    @teacher = User.find(session[:user_id])
-    @student = Student.new
+    require 'pry'; binding.pry
+    @teacher = current_user
+    @student = @teacher.students.new
   end
 
 end
