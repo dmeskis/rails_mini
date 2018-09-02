@@ -7,7 +7,6 @@ describe 'a student can create form' do
       student = create(:student)
 
       visit root_path
-      save_and_open_page
       click_on "Student"
 
       click_on "#{teacher.first_name} #{teacher.last_name}"
