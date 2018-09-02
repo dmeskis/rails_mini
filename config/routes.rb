@@ -14,7 +14,10 @@ Rails.application.routes.draw do
     resources :students, only: [:index, :new, :create]
   end
 
-  resources :forms, only: [:new]
+  resources :forms, only: [:new, :create]
+
+  get '/forms/select_student', to: 'forms#select_student'
+  get '/forms/select_teacher', to: 'forms#select_teacher'
 
   get '/dashboard', to: 'dashboard#index'
 end
