@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'User can log out' do
   describe 'on their dashboard page' do
     it 'lets user log out by clicking log out' do
-      user = User.create!(username: "Vagrant", email: "email@mail.com", password: "password")
+      user = create(:user)
 
       visit '/'
 

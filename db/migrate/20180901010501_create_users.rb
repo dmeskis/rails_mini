@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer :role, default: 0
       t.string :email
       t.string :phone
+      t.string :first_name
+      t.string :last_name
       t.string :image
     end
   end

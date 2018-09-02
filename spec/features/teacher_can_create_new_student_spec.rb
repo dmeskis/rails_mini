@@ -3,10 +3,7 @@ require 'rails_helper'
 describe 'user can create new student' do
   context 'as a teacher' do
     it 'can create a new student and assign him guardians' do
-      teacher = User.create(username: "Teacher",
-                            password: "password",
-                            email: "email@email.com",
-                            role: 1)
+      teacher = create(:user)
 
       visit login_path
 
@@ -22,6 +19,7 @@ describe 'user can create new student' do
 
       fill_in "student[first_name]", with: "Billy"
       fill_in "student[last_name]", with: "Madison"
+      # Add guardians test here
       click_on "Create Student"
       expect(current_path).to eq(user_students_path(teacher))
       expect(page).to have_content "Billy"
