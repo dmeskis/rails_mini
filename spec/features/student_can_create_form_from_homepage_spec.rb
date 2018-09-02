@@ -21,7 +21,7 @@ describe 'a student can create form' do
       click_on "Submit"
       expect(current_path).to eq(root_path)
       expect(page).to have_content("Thank you for filling out your form, #{student.first_name}")
-
+      expect(Form.count).to eq(1)
     end
   end
 end
