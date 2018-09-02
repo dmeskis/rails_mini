@@ -10,6 +10,7 @@ class Teacher::StudentsController < Teacher::BaseController
 
   def create
     current_user.students.create(student_params)
+    redirect_to user_students_path(current_user)
   end
 
   private

@@ -23,7 +23,9 @@ describe 'user can create new student' do
       fill_in "student[first_name]", with: "Billy"
       fill_in "student[last_name]", with: "Madison"
       click_on "Create Student"
-      expect(current_path).to eq(teacher_students_path)
+      expect(current_path).to eq(user_students_path(teacher))
+      expect(page).to have_content "Billy"
+      expect(page).to have_content "Madison"
     end
   end
 end
