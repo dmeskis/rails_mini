@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20180902162920) do
     t.integer "role", default: 0
     t.string "email"
     t.string "phone"
+    t.string "first_name"
+    t.string "last_name"
     t.string "image"
   end
 
