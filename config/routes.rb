@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
 
   namespace :teacher do
-    resources :students, only: [:index]
+    resources :students, only: [:index, :new, :create]
   end
+
+  get '/dashboard', to: 'dashboard#index'
 end

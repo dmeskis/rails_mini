@@ -75,3 +75,7 @@ i see all their forms by created_at.
 As an authenticated guardian,
 when i visit my kids form show page,
 i see that form.
+
+As a teacher,
+I can create a student,
+and assign him guardians.
