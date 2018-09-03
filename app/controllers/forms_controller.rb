@@ -17,7 +17,6 @@ class FormsController < ApplicationController
   def create
     @student = Student.find(params[:form][:student_id])
     @form = @student.forms.new(form_params)
-    require 'pry'; binding.pry
     if @form.save
       flash[:success] = "Thank you for filling out your form, #{@student.first_name}"
       redirect_to root_path
