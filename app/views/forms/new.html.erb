@@ -1,0 +1,30 @@
+<h1 class='text-center'>New Form</h1>
+
+<div class="card mx-auto" style="width: 25rem;">
+  <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <%= form_for @form do |f| %>
+      <%= f.hidden_field :student_id, value: @student.id %>
+      <div>
+      <%= f.label :mood %>
+      <%= f.text_field :mood %>
+      </div>
+      <div>
+      <%= f.label :worked_hard_at %>
+      <%= f.text_field :worked_hard_at %>
+      </div>
+      <div>
+      <%= f.label :done_better_at %>
+      <%= f.text_field :done_better_at %>
+      </div>
+      <div>
+      <%= f.label :favorite_part %>
+      <%= f.text_field :favorite_part %>
+      </div>
+      <div>
+      <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>

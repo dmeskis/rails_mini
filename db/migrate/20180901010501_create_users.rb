@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :phone
       t.string :first_name
       t.string :last_name
-      t.string :image
+      t.string :image, default: "/default_user.png"
     end
   end
 end

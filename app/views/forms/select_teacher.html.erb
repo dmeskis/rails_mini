@@ -1,0 +1,12 @@
+<h1 class='text-center'>Select Your Teacher</h1>
+
+<div class="card-deck">
+  <% @teachers.each do |teacher| %>
+   <%= link_to forms_select_student_path(:teacher => { :teacher_id => teacher.id}), class: "card custom-card" do %>
+      <img class="card-img-top" src="<%= teacher.image %>" alt="<%= teacher.first_name %> <%= teacher.last_name %>">
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= teacher.first_name %> <%= teacher.last_name %></h5>
+      </div>
+    <% end %>
+  <% end %>
+</div>
