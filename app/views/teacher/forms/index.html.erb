@@ -1,0 +1,11 @@
+<h1>Your Student Forms</h1>
+
+<%= @forms.each do |form| %>
+  <%= form.student.first_name %>
+  <%= form.student.last_name %>
+  <% if form.confirmed == 0 %>
+  <%= "Not Confirmed" %>
+  <% else form.confirmed == 1 %>
+  <%= "Confirmed" %>
+  <% end %>
+<% end %>

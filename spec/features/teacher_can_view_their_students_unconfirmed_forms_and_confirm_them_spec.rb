@@ -10,10 +10,21 @@ describe 'a teacher can confirm forms' do
                                   done_better_at: "Things",
                                   favorite_part: "Lunch",
                                   confirmed: 0)
-      # sets session user id to teacher id
-      get(:show, session: {user_id: teacher.id})
 
-      visit teacher_students_forms_path
+     visit '/'
+
+     click_on "Log In"
+
+     expect(current_path).to eq(login_path)
+
+     fill_in "username", with: teacher.username
+     fill_in "password", with: teacher.password
+
+     within(".card-body") do
+       click_on "Log In"
+     end
+
+      visit teacher_forms_path
 
       expect(page).to have_content("Not Confirmed")
       click_on "Confirm"
