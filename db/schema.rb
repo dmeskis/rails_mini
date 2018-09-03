@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180903183857) do
     t.string "favorite_part"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "confirmed", default: false
+    t.integer "confirmed", default: 0
     t.index ["student_id"], name: "index_forms_on_student_id"
   end
 
