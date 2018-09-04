@@ -1,8 +1,15 @@
-<%= form_for [@teacher, @student],  url: teacher_students_path do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <!-- Eventually add ability to upload image -->
-  <%= f.submit %>
-<% end %>
+<h1 class='text-center'>Add a New Student</h1>
+
+<div class="card mx-auto" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Create Student</h5>
+    <%= form_for [@teacher, @student],  url: teacher_students_path do |f| %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+      <!-- Eventually add ability to upload image -->
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
