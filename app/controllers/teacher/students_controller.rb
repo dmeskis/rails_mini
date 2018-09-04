@@ -15,6 +15,10 @@ class Teacher::StudentsController < Teacher::BaseController
     @student = @teacher.students.new
   end
 
+  def edit
+
+  end
+
   def create
     student = current_user.students.create(student_params)
     redirect_to user_students_path(current_user)

@@ -26,6 +26,7 @@ describe 'a teacher can view a single student' do
      visit teacher_student_path(student)
 
      click_on "Edit Student"
+     expect(current_path).to eq(edit_teacher_student_path(student))
 
      fill_in :student_first_name, with: "Bill"
      click_on "Confirm Changes"
