@@ -1,5 +1,5 @@
 <h1 class='text-center'>Welcome, <%= current_user.username %></h1>
-
+<h3 class='text-center'><%= current_user.role.capitalize %> Dashboard</h3>
 <% if current_user.teacher? %>
 <%= link_to "Add a Student", new_teacher_student_path %>
 <%= link_to "See All Student Forms", teacher_forms_path %>

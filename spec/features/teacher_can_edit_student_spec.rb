@@ -28,10 +28,10 @@ describe 'a teacher can view a single student' do
      click_on "Edit Student"
      expect(current_path).to eq(edit_teacher_student_path(student))
 
-     fill_in :student_first_name, with: "Bill"
+     fill_in :student_first_name, with: "Jesus"
      click_on "Confirm Changes"
      expect(current_path).to eq(teacher_student_path(student))
-     expect(page).to have_content("Bill")
+     expect(page).to have_content("Jesus")
     end
   end
 end

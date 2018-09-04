@@ -16,7 +16,18 @@ class Teacher::StudentsController < Teacher::BaseController
   end
 
   def edit
+    @student = Student.find(params[:id])
+  end
 
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(student_params)
+      flash[:success] = "Student successfully updated!"
+      redirect_to teacher_student_path(@student)
+    else
+      flash[:failure] = "Something went wrong, please try again."
+      render :edit
+    end
   end
 
   def create

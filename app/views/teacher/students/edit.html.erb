@@ -1,15 +1,15 @@
-<h1 class='text-center'>Add a New Student</h1>
+<h1 class='text-center'>Edit <%= @student.first_name %> <%= @student.last_name %></h1>
 
 <div class="card mx-auto" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Create Student</h5>
-    <%= form_for [@teacher, @student],  url: teacher_students_path do |f| %>
+    <%= form_for [@teacher, @student],  url: teacher_student_path(@student) do |f| %>
       <%= f.label :first_name %>
       <%= f.text_field :first_name %>
       <%= f.label :last_name %>
       <%= f.text_field :last_name %>
       <%= f.file_field :image %>
-      <%= f.submit "Create Student"%>
+      <%= f.submit "Confirm Changes" %>
     <% end %>
   </div>
 </div>
