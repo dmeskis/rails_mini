@@ -24,11 +24,14 @@ describe 'a teacher can view a single student' do
      end
 
      visit teacher_student_path(student)
-     expect(page).to have_content("#{student.last_name}, #{student.first_name}")
-     expect(page).to have_content("#{form.mood}")
-     expect(page).to have_content("#{form.worked_hard_at}")
-     expect(page).to have_content("#{form.done_better_at}")
-     expect(page).to have_content("#{form.favorite_part}")
+
+     click_on "Edit Student"
+     expect(current_path).to eq(edit_teacher_student_path(student))
+
+     fill_in :student_first_name, with: "Jesus"
+     click_on "Confirm Changes"
+     expect(current_path).to eq(teacher_student_path(student))
+     expect(page).to have_content("Jesus")
     end
   end
 end
