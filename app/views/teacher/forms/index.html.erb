@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th scope="col">Date</th>
+      <th scope="col">Form Link</th>
       <th scope="col">Last</th>
       <th scope="col">First</th>
       <th scope="col">Status</th>
@@ -14,6 +15,7 @@
     <% @forms.each do |form| %>
     <tr>
       <th scope="row"><%= form.created_at %></th>
+      <td><%= link_to "View Form", teacher_form_path(form) %></td>
       <td><%= form.student.last_name %></td>
       <td><%= form.student.first_name %></td>
       <td><% if form.confirmed == 0 %>

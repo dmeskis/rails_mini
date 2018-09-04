@@ -4,6 +4,10 @@ class Teacher::FormsController < Teacher::BaseController
     @forms = current_user.forms.order(created_at: :desc)
   end
 
+  def show
+    @form = Form.find(params[:id])
+  end
+
   def confirm
     Form.update(params[:form_id], confirmed: params[:confirmed])
     redirect_to teacher_forms_path
