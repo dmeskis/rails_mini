@@ -5,5 +5,6 @@ FactoryBot.define do
     worked_hard_at "MyString"
     done_better_at "MyString"
     favorite_part "MyString"
+    confirmed 0
   end
 end

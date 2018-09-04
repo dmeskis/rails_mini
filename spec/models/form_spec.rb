@@ -7,5 +7,6 @@ RSpec.describe Form, type: :model do
     it {should validate_presence_of(:worked_hard_at)}
     it {should validate_presence_of(:done_better_at)}
     it {should validate_presence_of(:favorite_part)}
+    it {should validate_presence_of(:confirmed)}
   end
 end

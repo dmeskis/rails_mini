@@ -12,9 +12,12 @@ Rails.application.routes.draw do
 
   namespace :teacher do
     resources :students, only: [:index, :new, :create]
+    resources :forms, only: [:index, :edit] do
+      put :confirm
+    end
   end
 
-  resources :forms, only: [:new, :create]
+  resources :forms, only: [:new, :create, ]
 
   get '/forms/select_student', to: 'forms#select_student'
   get '/forms/select_teacher', to: 'forms#select_teacher'
