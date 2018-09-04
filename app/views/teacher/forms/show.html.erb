@@ -6,4 +6,7 @@
 <%= @form.done_better_at %>
 <%= @form.favorite_part %>
 
+<% if @form.confirmed == 0 %>
+<%= button_to "Confirm", teacher_form_confirm_path(@form, confirmed: 1), :method => :put %>
+<% end %>
 <%= button_to "Delete", teacher_form_path(@form), :method => :delete %>
