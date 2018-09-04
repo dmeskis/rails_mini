@@ -4,23 +4,32 @@
   <thead>
     <tr>
       <th scope="col">Date</th>
-      <th scope="col">First</th>
+      <th scope="col">Form Link</th>
       <th scope="col">Last</th>
+      <th scope="col">First</th>
       <th scope="col">Status</th>
+      <th scope="col">Options</th>
     </tr>
   </thead>
   <tbody>
     <% @forms.each do |form| %>
     <tr>
-      <th scope="row"><%= form.updated_at %></th>
-      <td><%= form.student.first_name %></td>
+      <th scope="row"><%= form.created_at %></th>
+      <td><%= link_to "View Form", teacher_form_path(form) %></td>
       <td><%= form.student.last_name %></td>
+      <td><%= form.student.first_name %></td>
       <td><% if form.confirmed == 0 %>
           <%= "Not Confirmed" %>
-          <%= button_to "Confirm", teacher_form_confirm_path(form, confirmed: 1), :method => :put %>
           <% else form.confirmed == 1 %>
-          <%= "Confirmed" %></td>
+          <%= "Confirmed" %>
+      </td>
           <% end %>
+      <td>
+          <% if form.confirmed == 0 %>
+          <%= button_to "Confirm", teacher_form_confirm_path(form, confirmed: 1), :method => :put %>
+          <% end %>
+          <%= button_to "Delete", teacher_form_path(form), :method => :delete %>
+      </td>
     </tr>
     <% end %>
   </tbody>
