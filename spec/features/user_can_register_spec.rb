@@ -18,7 +18,7 @@ describe 'User can register' do
       fill_in :user_last_name, with: "Saget"
 
       click_on "Create Account"
-      expect(page).to have_content("Welcome, #{username}!")
+      expect(page).to have_content("#{username}")
     end
   end
 end

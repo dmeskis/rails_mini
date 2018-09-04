@@ -1,0 +1,26 @@
+<div class="card mx-auto" style="width: 25rem;">
+  <div class="card-body">
+    <h5 class="card-title">Edit Your Profile</h5>
+      <%= form_for @user do |f| %>
+        <div>
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+        </div>
+        </p><%= "You must enter a new or current password"%><p>
+        <div>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+        <div>
+          <%= f.label :first_name %>
+          <%= f.password_field :first_name %>
+        </div>
+        <div>
+          <%= f.label :last_name %>
+          <%= f.password_field :last_name %>
+        </div>
+        <%= f.file_field :image %>
+        <%= f.submit "Confirm Changes"%>
+      <% end %>
+  </div>
+</div>

@@ -1,2 +1,10 @@
-<%= link_to "Log Out", logout_path %>
-<h1>Welcome, <%= current_user.username %>!</h1>
+<h1 class='text-center'><%= @user.username %></h1>
+
+<div class="card mx-auto" style="width: 18rem;">
+  <img class="card-img-top" src="<%= @user.image%>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h5>
+    <p class="card-text">Email: <%= @user.email %></p>
+    <p class="card-text">Phone: <%= @user.phone %></p>
+  </div>
+</div>
