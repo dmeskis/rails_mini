@@ -7,3 +7,38 @@ Form for <%= @newest_form.created_at.strftime("%F") %>
 <%= @newest_form.done_better_at %>
 <%= @newest_form.favorite_part %>
 </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Form Link</th>
+      <th scope="col">Last</th>
+      <th scope="col">First</th>
+      <th scope="col">Status</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @forms.each do |form| %>
+    <tr>
+      <th scope="row"><%= form.created_at.strftime("%F") %></th>
+      <td><%= link_to "View Form", teacher_form_path(form) %></td>
+      <td><%= form.student.last_name %></td>
+      <td><%= form.student.first_name %></td>
+      <td><% if form.confirmed == 0 %>
+          <%= "Not Confirmed" %>
+          <% else form.confirmed == 1 %>
+          <%= "Confirmed" %>
+      </td>
+          <% end %>
+      <td>
+          <% if form.confirmed == 0 %>
+          <%= button_to "Confirm", teacher_form_confirm_path(form, confirmed: 1), :method => :put %>
+          <% end %>
+          <%= button_to "Delete", teacher_form_path(form), :method => :delete %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

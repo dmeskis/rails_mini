@@ -14,7 +14,7 @@
   <tbody>
     <% @forms.each do |form| %>
     <tr>
-      <th scope="row"><%= form.created_at %></th>
+      <th scope="row"><%= form.created_at.strftime("%F") %></th>
       <td><%= link_to "View Form", teacher_form_path(form) %></td>
       <td><%= form.student.last_name %></td>
       <td><%= form.student.first_name %></td>

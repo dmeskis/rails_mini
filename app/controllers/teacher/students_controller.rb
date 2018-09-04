@@ -1,12 +1,13 @@
 class Teacher::StudentsController < Teacher::BaseController
 
   def index
-    @students = current_user.students
+    @students = current_user.students.order(:last_name)
   end
 
   def show
     @student = Student.find(params[:id])
     @newest_form = @student.forms.last
+    @forms = @student.forms
   end
 
   def new
