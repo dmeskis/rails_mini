@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'a teacher can confirm forms' do
   describe 'on a student forms page' do
-    it 'can confirm, edit, or delete form' do
+    it 'can confirm form' do
       teacher = create(:user)
       student = teacher.students.create!(first_name: "Billy", last_name: "Madison")
       form = student.forms.create!(mood: "Happy",
@@ -27,9 +27,10 @@ describe 'a teacher can confirm forms' do
       visit teacher_forms_path
 
       expect(page).to have_content("Not Confirmed")
+      save_and_open_page
       click_on "Confirm"
       expect(page).to have_content("Confirmed")
-
+      expect(Form.first.confirmed).to eq(1)
     end
   end
 end

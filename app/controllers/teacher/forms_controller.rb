@@ -1,8 +1,11 @@
 class Teacher::FormsController < Teacher::BaseController
 
   def index
-    require 'pry'; binding.pry
-    @students = current_user.students.all
-    @forms = Form.joins(:students).where(:)
+    @forms = current_user.forms
+  end
+
+  def confirm
+    Form.update(params[:form_id], confirmed: params[:confirmed])
+    redirect_to teacher_forms_path
   end
 end

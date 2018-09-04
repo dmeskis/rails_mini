@@ -7,4 +7,5 @@ class User < ApplicationRecord
   enum role: %w(guardian teacher)
   has_many :students_users
   has_many :students, through: :students_users
+  has_many :forms, through: :students
 end
