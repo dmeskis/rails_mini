@@ -16,8 +16,8 @@ Rails.application.routes.draw do
       put :confirm
     end
   end
-
-  resources :forms, only: [:new, :create, ]
+  # resources student
+  resources :forms, only: [:new, :create]
 
   get '/forms/select_student', to: 'forms#select_student'
   get '/forms/select_teacher', to: 'forms#select_teacher'
