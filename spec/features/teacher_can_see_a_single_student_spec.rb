@@ -5,10 +5,11 @@ describe 'a teacher can view all their students' do
     it 'clicks show all students and they can view all students' do
       teacher = create(:user)
       student = teacher.students.create!(first_name: "Billy", last_name: "Madison")
-      student_2 = teacher.students.create!(first_name: "Mia", last_name: "Khalifa")
-      student_3 = teacher.students.create!(first_name: "Allison", last_name: "Diehl")
-
-
+      form = student.forms.create!(mood: "Happy",
+                                  worked_hard_at: "Stuff",
+                                  done_better_at: "Things",
+                                  favorite_part: "Lunch",
+                                  confirmed: 0)
      visit '/'
 
      click_on "Log In"
@@ -22,10 +23,12 @@ describe 'a teacher can view all their students' do
        click_on "Log In"
      end
 
-     click_on "View all of your students"
+     visit teacher_student_path(student)
      expect(page).to have_content("#{student.last_name}, #{student.first_name}")
-     expect(page).to have_content("#{student_2.last_name}, #{student_2.first_name}")
-     expect(page).to have_content("#{student_3.last_name}, #{student_3.first_name}")
+     expect(page).to have_content("#{form.mood}")
+     expect(page).to have_content("#{form.worked_hard_at}")
+     expect(page).to have_content("#{form.done_better_at}")
+     expect(page).to have_content("#{form.favorite_part}")
     end
   end
 end

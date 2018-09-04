@@ -1,6 +1,12 @@
 class Teacher::StudentsController < Teacher::BaseController
 
   def index
+    @students = current_user.students
+  end
+
+  def show
+    @student = Student.find(params[:id])
+    @newest_form = @student.forms.last
   end
 
   def new

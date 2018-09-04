@@ -1,1 +1,13 @@
 <h1> All Students </h1>
+
+<div class="card-deck">
+  <% @students.each do |student| %>
+  <div class="card">
+    <img class="card-img-top" src="<%= student.image %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= student.last_name %>, <%= student.first_name %></h5>
+      <p class="card-text"><%= link_to "View Student Page", teacher_student_path(student) %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
