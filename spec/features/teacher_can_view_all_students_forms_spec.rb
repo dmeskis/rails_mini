@@ -29,7 +29,6 @@ describe 'a teacher can view a student' do
      end
 
      visit teacher_student_path(student)
-     save_and_open_page
      expect(page).to have_content("#{student.last_name}, #{student.first_name}")
      expect(page).to have_content("#{form.created_at.strftime("%F")}")
      expect(page).to have_content("#{form_2.created_at.strftime("%F")}")

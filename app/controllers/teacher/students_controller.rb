@@ -16,14 +16,14 @@ class Teacher::StudentsController < Teacher::BaseController
   end
 
   def create
-    current_user.students.create(student_params)
+    student = current_user.students.create(student_params)
     redirect_to user_students_path(current_user)
   end
 
   private
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name)
+      params.require(:student).permit(:first_name, :last_name, :image)
     end
 
 end
