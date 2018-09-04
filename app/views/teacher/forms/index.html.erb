@@ -4,8 +4,8 @@
   <thead>
     <tr>
       <th scope="col">Date</th>
-      <th scope="col">First</th>
       <th scope="col">Last</th>
+      <th scope="col">First</th>
       <th scope="col">Status</th>
       <th scope="col">Options</th>
     </tr>
@@ -14,8 +14,8 @@
     <% @forms.each do |form| %>
     <tr>
       <th scope="row"><%= form.created_at %></th>
-      <td><%= form.student.first_name %></td>
       <td><%= form.student.last_name %></td>
+      <td><%= form.student.first_name %></td>
       <td><% if form.confirmed == 0 %>
           <%= "Not Confirmed" %>
           <% else form.confirmed == 1 %>
