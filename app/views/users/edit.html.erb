@@ -1,0 +1,17 @@
+<div class="card mx-auto" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Edit Your Profile</h5>
+      <%= form_for @user do |f| %>
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label :first_name %>
+        <%= f.password_field :first_name %>
+        <%= f.label :last_name %>
+        <%= f.password_field :last_name %>
+        <%= f.file_field :image %>
+        <%= f.submit "Confirm Changes"%>
+      <% end %>
+  </div>
+</div>
