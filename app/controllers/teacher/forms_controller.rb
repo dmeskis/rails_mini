@@ -6,6 +6,7 @@ class Teacher::FormsController < Teacher::BaseController
 
   def show
     @form = Form.find(params[:id])
+    @date = @form.created_at.strftime("%F")
   end
 
   def confirm

@@ -22,7 +22,6 @@ describe 'a teacher can view a single form' do
     end
 
      visit teacher_form_path(form)
-     save_and_open_page
      expect(page).to have_content(form.mood)
      expect(page).to have_content(form.worked_hard_at)
      expect(page).to have_content(form.done_better_at)
