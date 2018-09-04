@@ -4,8 +4,8 @@ describe 'a teacher can confirm forms' do
   describe 'on a student forms page' do
     it 'can confirm, edit, or delete form' do
       teacher = create(:user)
-      student = teacher.students.create(first_name: "Billy", last_name: "Madison")
-      form = student.forms.create(mood: "Happy",
+      student = teacher.students.create!(first_name: "Billy", last_name: "Madison")
+      form = student.forms.create!(mood: "Happy",
                                   worked_hard_at: "Stuff",
                                   done_better_at: "Things",
                                   favorite_part: "Lunch",
