@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   namespace :teacher do
-    resources :students, only: [:index, :new, :create, :show, :edit, :update] do
+    resources :students, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
       resources :forms, only: [:index, :show]
     end
     resources :guardians, only: [:index]

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'a teacher can view a single student' do
-  describe 'from their index page' do
-    it 'clicks a student and they can view that student' do
+describe 'a teacher can delete a student' do
+  describe 'from their show page' do
+    it 'clicks delete student and they can delete that student' do
       teacher = create(:user)
       student = teacher.students.create!(first_name: "Billy", last_name: "Madison")
       form = student.forms.create!(mood: "Happy",

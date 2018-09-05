@@ -2,8 +2,8 @@ class Student < ApplicationRecord
   validates_presence_of :first_name, :last_name
   has_many :students_users
   has_many :users, through: :students_users
-  has_many :forms
-  
+  has_many :forms, dependent: :destroy
+
   mount_uploader :image, ImageUploader
   validates_processing_of :image
   validate :image_size_validation
