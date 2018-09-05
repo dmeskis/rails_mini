@@ -1,0 +1,18 @@
+<h1 class='text-center'>Your Student's Teachers</h1>
+
+<div class="card-deck">
+  <% @teachers.each do |teacher| %>
+  <div class="card">
+    <img class="card-img-top" src="<%= teacher.image %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= teacher.last_name %>, <%= teacher.first_name %></h5>
+      <p class="card-text">
+        Email: <%= teacher.email %>
+      </p>
+      <p class="card-text">
+        Phone: <%= teacher.phone %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>
