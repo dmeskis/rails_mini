@@ -2,12 +2,16 @@
 <h3 class='text-center'><%= current_user.role.capitalize %> Dashboard</h3>
 
 <ul class="list-group">
-
+<% if current_user.guardian? %>
+<li class="list-group-item"><%= link_to "See All Student Forms", guardian_forms_path %></li>
+<li class="list-group-item"><%= link_to "View All of Your Students", guardian_students_path %></li>
+<li class="list-group-item"><%= link_to "View Teachers", guardian_teachers_path %></li>
+<% end %>
 <% if current_user.teacher? %>
 <li class="list-group-item"><%= link_to "Add a Student", new_teacher_student_path %></li>
 <li class="list-group-item"><%= link_to "See All Student Forms", teacher_forms_path %></li>
-<li class="list-group-item"><%= link_to "View all of your students", teacher_students_path %></li>
-<li class="list-group-item"><%= link_to "View all guardians", teacher_guardians_path %></li>
+<li class="list-group-item"><%= link_to "View All of Your Students", teacher_students_path %></li>
+<li class="list-group-item"><%= link_to "View All Guardians", teacher_guardians_path %></li>
 <li class="list-group-item"><%= link_to "Create Student/Guardian Relations", teacher_relations_path %></li>
 <% end %>
 <li class="list-group-item"><%= link_to "Edit Your Profile", edit_user_path(current_user) %></li>

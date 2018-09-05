@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def current_teacher?
     current_user && current_user.teacher?
   end
+
+  def current_guardian?
+    current_user && current_user.guardian?
+  end
 end
