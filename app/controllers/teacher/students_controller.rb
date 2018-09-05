@@ -42,6 +42,10 @@ class Teacher::StudentsController < Teacher::BaseController
     end
   end
 
+  def add_parent
+
+  end
+
   def create
     student = current_user.students.create(student_params)
     redirect_to user_students_path(current_user)
