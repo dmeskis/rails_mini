@@ -13,6 +13,10 @@ class User < ApplicationRecord
   validates_processing_of :image
   validate :image_size_validation
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
     def image_size_validation
       errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes

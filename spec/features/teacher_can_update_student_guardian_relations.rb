@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'a teacher can view a single student' do
-  describe 'from their index page' do
-    it 'clicks a student and they can view that student' do
+describe 'a teacher can change student relations' do
+  describe 'from their edit page' do
+    it 'selects a parent from the dropdown and updates their relation' do
       teacher = create(:user)
       student = teacher.students.create!(first_name: "Billy", last_name: "Madison")
       form = student.forms.create!(mood: "Happy",
@@ -15,6 +15,13 @@ describe 'a teacher can view a single student' do
                               phone: "555 555 5555",
                               email: "bill@mail.com",
                               username: "billy",
+                              password: "password",
+                              role: 0)
+      guardian_2 = User.create!(first_name: "Stan",
+                              last_name: "Hope",
+                              phone: "555 555 5555",
+                              email: "stan@mail.com",
+                              username: "stanley",
                               password: "password",
                               role: 0)
      visit '/'
@@ -34,12 +41,11 @@ describe 'a teacher can view a single student' do
 
      click_on "Edit Student"
      expect(current_path).to eq(edit_teacher_student_path(student))
-
      select "Bill O'Reilly", :from => "guardianSelect"
 
      click_on "Confirm Changes"
      expect(current_path).to eq(teacher_student_path(student))
-     expect(page).to have_content("#{guardian.first_name}, #{guardian.last_name}")
+     expect(student.users.last.first_name).to eq("#{guardian.first_name}")
     end
   end
 end

@@ -4,10 +4,14 @@
   <div class="card-body">
     <h5 class="card-title">Create Student</h5>
     <%= form_for [@teacher, @student],  url: teacher_student_path(@student) do |f| %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+      <div>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </div>
+      <div>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </div>
       <%= f.file_field :image %>
       <%= f.submit "Confirm Changes" %>
     <% end %>

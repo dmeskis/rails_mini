@@ -4,4 +4,8 @@ class StudentsController < ApplicationController
     @students = current_user.students
   end
 
+  def add_parent_student_relation
+
+  end
+
 end

@@ -16,6 +16,7 @@ class Teacher::StudentsController < Teacher::BaseController
   end
 
   def edit
+    @guardians = User.where(role: 0).all
     @student = Student.find(params[:id])
   end
 
