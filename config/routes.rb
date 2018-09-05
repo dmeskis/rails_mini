@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :forms, only: [:index, :edit, :destroy, :show] do
       put :confirm
     end
+    get 'relations', to: 'students#add_parent'
+    post 'relations_submit', to:'students#create_relation'
   end
   # resources student
   resources :forms, only: [:new, :create]

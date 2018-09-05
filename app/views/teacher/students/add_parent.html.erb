@@ -1,0 +1,20 @@
+<h1 class='text-center'>Create Guardian/Student Relations</h1>
+<div class="card mx-auto" style="width: 18rem;">
+  <div class="card-body">
+    <%= form_tag teacher_relations_submit_path do %>
+      <div>
+        Select a Student
+      </div>
+      <div>
+        <%= collection_select(:student, :student_id, @students, :id, :full_name, prompt: true) %>
+      </div>
+      <div>
+        Select a Guardian
+      </div>
+      <div>
+        <%= collection_select(:user, :user_id, @guardians, :id, :full_name, prompt: true) %>
+      </div>
+        <%= submit_tag "Confirm Relation" %>
+    <% end %>
+  </div>
+</div>
