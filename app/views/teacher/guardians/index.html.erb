@@ -1,0 +1,30 @@
+<h1 class='text-center'>Your Student's Guardians</h1>
+
+<!-- <% @guardians.each do |guardian| %>
+  <div>
+    <p><%= guardian.last_name %>, <%= guardian.first_name %></p>
+  </div>
+  <% guardian.students.each do |student| %>
+    <%= link_to "#{student.last_name}, #{student.first_name}", teacher_student_path(student) %>
+  <% end %>
+<% end %> -->
+
+<div class="card-deck">
+  <% @guardians.each do |guardian| %>
+  <div class="card">
+    <img class="card-img-top" src="<%= guardian.image %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= guardian.last_name %>, <%= guardian.first_name %></h5>
+      <p class="card-text">
+        Email: <%= guardian.email %>
+      </p>
+      <p class="card-text">
+        Phone: <%= guardian.phone %>
+      </p>
+      <p class="card-text">  <% guardian.students.each do |student| %>
+          <%= link_to "#{student.last_name}, #{student.first_name}", teacher_student_path(student) %>
+        <% end %></p>
+    </div>
+  </div>
+  <% end %>
+</div>

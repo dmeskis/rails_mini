@@ -27,7 +27,6 @@ describe 'User can edit profile' do
       click_on "Confirm Changes"
 
       expect(current_path).to eq(user_path(user))
-      save_and_open_page
       expect(page).to have_content("Bob")
       expect(page).to have_content("Saget")
     end
