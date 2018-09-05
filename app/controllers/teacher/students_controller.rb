@@ -30,6 +30,17 @@ class Teacher::StudentsController < Teacher::BaseController
     end
   end
 
+  def destroy
+    @student = Student.find(params[:id])
+    if @student.destroy
+      flash[:success] = "Student has been deleted!"
+      redirect_to teacher_students_path
+    else
+      flash[:failure] = "Something went wrong, student could not be deleted."
+      redirect_to teacher_student_path(@student)
+    end
+  end
+
   def create
     student = current_user.students.create(student_params)
     redirect_to user_students_path(current_user)

@@ -9,6 +9,7 @@ Form for <%= @newest_form.created_at.strftime("%F") %>
 </div>
 
 <%= link_to "Edit Student", edit_teacher_student_path %>
+<%= link_to "Delete Student", teacher_student_path, method: :delete %>
 
 <table class="table">
   <thead>
