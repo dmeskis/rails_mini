@@ -21,9 +21,14 @@
       <p class="card-text">
         Phone: <%= guardian.phone %>
       </p>
-      <p class="card-text">  <% guardian.students.each do |student| %>
+      <p>
+        Students:
+      </p>
+      <% guardian.students.each do |student| %>
+      <p class="card-text">
           <%= link_to "#{student.last_name}, #{student.first_name}", teacher_student_path(student) %>
-        <% end %></p>
+      </p>
+      <% end %>
     </div>
   </div>
   <% end %>
