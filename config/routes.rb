@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   namespace :teacher do
     resources :students, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
       resources :forms, only: [:index, :show]
-      get 'relations', to: 'students#add_parent'
     end
     resources :guardians, only: [:index]
     resources :forms, only: [:index, :edit, :destroy, :show] do
       put :confirm
     end
+    get 'relations', to: 'students#add_parent'
   end
   # resources student
   resources :forms, only: [:new, :create]
