@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :students, only: [:index, :new, :create, :show, :edit, :update] do
       resources :forms, only: [:index, :show]
     end
+    resources :guardians, only: [:index]
     resources :forms, only: [:index, :edit, :destroy, :show] do
       put :confirm
     end

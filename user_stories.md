@@ -32,13 +32,13 @@ As an authenticated teacher,
 when i visit my dashboard,
 there is a list of students w/ links to their show pages.
 
-As an authenticated teacher,
+<!-- As an authenticated teacher,
 when i visit my dashboard,
-there is a link to add a new student.
+there is a link to add a new student. -->
 
-As an authenticated teacher,
+<!-- As an authenticated teacher,
 when i visit my dashboard,
-there is a list of parents w/ links to their show pages.
+there is a list of parents w/ links to their show pages. -->
 
 As an authenticated teacher,
 when i visit a students show page,
