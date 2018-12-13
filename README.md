@@ -4,6 +4,8 @@ This project was an exploration of Rails during my time in module 2 at Turing Sc
 
 ## How to Use
 
+Site can be found [here](https://polar-springs-24763.herokuapp.com/).
+
 Admin Login:
   Username: dylan
   Password: password
