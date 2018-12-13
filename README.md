@@ -6,12 +6,12 @@ This project was an exploration of Rails during my time in module 2 at Turing Sc
 
 Site can be found [here](https://polar-springs-24763.herokuapp.com/).
 
-Admin Login:
-  Username: dylan
+Admin Login:  
+  Username: dylan  
   Password: password
   
-Parent Login:
-  Username: parent
-  Password: password
+Parent Login:  
+  Username: parent  
+  Password: password  
   
 Visit the site and login as a teacher(admin) to see the functionality built into it or go in and click through the students option to see how students can fill out their own forms.
