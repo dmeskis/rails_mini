@@ -3,7 +3,7 @@
 <div class="card-deck">
   <% @students.each do |student| %>
    <%= link_to new_form_path(:student => { :student_id => student.id}), class: "card custom-card" do %>
-      <img class="card-img-top" src="<%= student.image %>" alt="<%= student.first_name %> <%= student.last_name %>">
+      <%= image_tag(student.image, class: "card-img-top", alt: "#{student.first_name} #{student.last_name}") %>
       <div class="card-body">
         <h5 class="card-title text-center"><%= student.first_name %> <%= student.last_name %></h5>
       </div>
